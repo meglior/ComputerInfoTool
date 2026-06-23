@@ -1,3 +1,5 @@
+# Functions/Private/Logging.ps1
+
 $Global:LogFile = $null
 $Global:CurrentLogLevel = "Info"
 
@@ -11,6 +13,7 @@ $LogLevels = @{
 }
 
 function Start-Logging {
+    [CmdletBinding()]
     param(
         [string]$LogPath,
         [string]$LogLevel = "Info"
@@ -20,14 +23,15 @@ function Start-Logging {
     $Global:LogFile = $LogPath
 
     $dir = Split-Path $LogPath -Parent
-    if (-not (Test-Path $dir)) { 
-        New-Item -Path $dir -ItemType Directory -Force | Out-Null 
+    if (-not (Test-Path $dir)) {
+        New-Item -Path $dir -ItemType Directory -Force | Out-Null
     }
 
     Write-Log "=== Запуск логирования (уровень: $LogLevel) ===" -Level Info
 }
 
 function Write-Log {
+    [CmdletBinding()]
     param(
         [string]$Message,
         [ValidateSet('Debug','Verbose','Info','Warning','Error','Success')]
@@ -50,6 +54,7 @@ function Write-Log {
         'Warning' { 'Yellow' }
         'Error'   { 'Red' }
         'Success' { 'Green' }
+        default   { 'White' }
     }
     Write-Host $logLine -ForegroundColor $color
 }
