@@ -70,7 +70,7 @@ graph TD
 > [!tip] Рекомендуется для комплексной проверки
 
 ```powershell
-.\Get-ComputerInfo.ps1 -OU "OU=Workstations,DC=partner,DC=ru" `
+.\Get-ComputerInfo.ps1 -OU "OU=Workstations,DC=domine,DC=loc" `
     -IncludeOnlineCheck `
     -IncludeWin11Readiness `
     -IncludeRemoteAccessAudit `
@@ -84,10 +84,10 @@ graph TD
 > Перед выполнением рекомендуется использовать параметр `-WhatIf` для проверки!
 
 ```powershell
-.\Get-ComputerInfo.ps1 -OU "OU=Computers,DC=partner,DC=ru" `
+.\Get-ComputerInfo.ps1 -OU "OU=Computers,DC=domine,DC=loc" `
     -IncludeDisableInactive `
     -DaysInactive 45 `
-    -TargetOU "OU=_Заблокированные1,DC=partner,DC=ru" `
+    -TargetOU "OU=_Заблокированные1,DC=domine,DC=loc" `
     -WhatIf
 ```
 
