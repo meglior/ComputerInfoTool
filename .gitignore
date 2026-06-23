@@ -1,0 +1,53 @@
+# =============================================
+# ComputerInfoTool — .gitignore
+# =============================================
+
+# === Отчёты и логи (чувствительные данные) ===
+*.csv
+*.xlsx
+*.log
+*.txt
+Reports/
+Logs/
+*.bak
+*.tmp
+*.old
+
+# === Конфигурационные и личные файлы ===
+config.ps1.bak
+secrets.ps1
+credentials*
+computers.txt
+*.ps1.bak
+
+# === PowerShell специфическое ===
+*.ps1xml
+*.psc1
+*.pssession
+__pycache__/
+
+# === IDE и редакторы ===
+.vscode/
+*.code-workspace
+*.suo
+*.user
+.vs/
+.DS_Store
+Thumbs.db
+
+# === Временные файлы ===
+~$*
+*.swp
+*.swo
+
+# === Кэш и мусор ===
+*.cache
+*.pdb
+*.obj
+
+# =============================================
+# Если используешь конкретные пути — добавь их:
+# =============================================
+E:\PS\ComputerInfoTool\Reports/*
+E:\PS\ComputerInfoTool\Logs/*
+E:\Reports/*
